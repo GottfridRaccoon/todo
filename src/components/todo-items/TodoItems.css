@@ -1,0 +1,21 @@
+.list-items-wrapper {
+	display: flex;
+	width: 100%;
+}
+.list-items__button{
+	
+	display: flex;
+	justify-content: flex-end;
+}
+.list-items__text, .list-items__button{
+	width: 50%;
+}
+.done{
+	text-decoration: line-through;
+}
+.important{
+	color: #3f51b5;
+	font-weight:bold;
+}
+
+
