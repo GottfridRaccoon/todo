@@ -1,32 +1,43 @@
 import React from "react"
 import { Button } from '@material-ui/core';
 import { ButtonGroup } from "@material-ui/core";
-import Grid from '@material-ui/core/Grid';
+
 import { TextField } from "@material-ui/core";
+import './Search.css'
 
 
 
+const Search = ({ searchChange, taskFilterChange }) => {
+    const [textField, textChange] = React.useState({
+        text: ""
+    })
+    const onTextChange = (e) => {
+        let text = e.target.value
+        textChange({ text })
+        searchChange(text)
 
-const Search = () => {
+
+    }
+    const showActive = () => taskFilterChange("active")
+    const showDone = () => taskFilterChange("done")
+    const showAll = () => taskFilterChange("all")
 
     return (
         <div className="search-wrapper">
-            <Grid container spacing={10}>
-                <Grid item xs={4}>
-                    <TextField id="standard-basic" label="поиск" />
 
-                </Grid>
-                <Grid item xs={3}>
-                    <div className="button-wrapper">
-                        <ButtonGroup variant="contained" color="primary" aria-label="outlined primary button group" className="button-group">
-                            <Button>Все</Button>
-                            <Button>Активно</Button>
-                            <Button>Выполненно</Button>
-                        </ButtonGroup>
 
-                    </div>
-                </Grid>
-            </Grid>
+            <TextField id="standard-basic" label="поиск" onChange={onTextChange} value={textField.text} />
+
+
+            <div className="button-wrapper">
+                <ButtonGroup color="default" size="small" aria-label="outlined secondary button group">
+                    <Button onClick={showAll}>Все</Button>
+                    <Button onClick={showActive}  >Активно</Button>
+                    <Button onClick={showDone}>Выполнено</Button>
+                </ButtonGroup>
+
+            </div>
+
         </div>
 
     )

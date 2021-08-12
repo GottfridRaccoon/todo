@@ -6,16 +6,21 @@ import "./TodoList.css"
 import Box from '@material-ui/core/Box';
 
 
-const TodoList = ({ tasks, onDelete }) => {
+const TodoList = ({ tasks, onDelete, toggleImportant, toggleDone }) => {
 
-    const { tasksData } = tasks
-    const elements = tasksData.map((taskElement) => {
+
+
+
+
+
+
+    const elements = tasks.map((taskElement) => {
         const { id, ...tasksProp } = taskElement
         return (
 
             <Box key={id} borderRadius={4} border={1} borderColor="grey.500" className="todo-list-item" >
                 <ListItem >
-                    <TodoItems {...tasksProp} onDelete={() => onDelete(id)} />
+                    <TodoItems {...tasksProp} onDelete={() => onDelete(id)} toggleImportant={() => toggleImportant(id)} toggleDone={() => toggleDone(id)} tasks={tasks} />
                 </ListItem>
             </Box >
         )

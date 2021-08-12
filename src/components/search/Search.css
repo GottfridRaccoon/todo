@@ -1,0 +1,21 @@
+.search-wrapper, .button-wrapper{
+
+	display: flex;
+}
+.button-wrapper{
+	
+	margin-top: 2%;
+	
+	width: 100%;
+	justify-content: flex-end;
+}
+@media only screen and (max-width: 500px) {
+	.search-wrapper{
+		display: block;
+		
+	}
+	.button-wrapper{
+		display: block;
+		width: 100%;
+	}
+  }
