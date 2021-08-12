@@ -24,10 +24,10 @@ const AddPanel = ({ createItem }) => {
 			<div className="addpanel-wrapper__textfield">
 				<TextField onChange={(e) => propChange(e)} value={textOfTask.text} className="addpanel__textfield" />
 			</div>
-			<div className ="addpanel-wrapper__button">
-			<Button variant="contained" color="primary">
-				Добавить
-			</Button>
+			<div className="addpanel-wrapper__button">
+				<Button variant="contained" color="primary" type="submit">
+					Добавить
+				</Button>
 			</div>
 		</form>
 
